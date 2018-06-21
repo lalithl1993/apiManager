@@ -1,6 +1,6 @@
 <?php
 
-include"../class.CurlHelper.php";
+require"../class.CurlHelper.php";
 class api_onn
 {
 $httpMethod = "POST"
