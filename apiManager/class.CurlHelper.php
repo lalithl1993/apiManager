@@ -1,3 +1,4 @@
+<?php
 class CurlHelper {
 // This method will perform an action/method thru HTTP/API calls
 // Parameter description:
@@ -39,3 +40,4 @@ public static function perform_http_request($method, $url, $data = false)
         "result"=>$result);
 }
 }
+?>
