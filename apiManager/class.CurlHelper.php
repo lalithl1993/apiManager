@@ -32,12 +32,12 @@ public static function perform_http_request($method, $url, $data = false)
     //created by me 2 lines
     $error    = curl_error($curl);
     $errno    = curl_errno($curl);
-    $result = curl_exec($curl);
+    $response = curl_exec($curl);
     curl_close($curl);
     return array(
         "error"=>$error,
         "errno"=>$errno,
-        "result"=>$result);
+        "response"=>$response);
 }
 }
 ?>
