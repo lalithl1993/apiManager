@@ -1,11 +1,19 @@
 <?php
 
-require"../class.CurlHelper.php";
+require"class.CurlHelper.php";
 class api_onn
 {
-$httpMethod = "POST"
-$host="https://devservice.onnbikes.com/OnnBikesExternal/v1/";
-$authToken="5b1f666d0ed5422cfbabfb13";
+
+    private $httpMethod ;
+    private $host;
+
+    public function __construct()
+    {
+        $this->httpMethod = "POST";
+        $this->host="https://devservice.onnbikes.com/OnnBikesExternal/v1/rest/";
+}
+
+//$authToken="5b1f666d0ed5422cfbabfb13";
 
 /*
 ONNBikes Booking Service Show/Hide List Operations Expand Operations
@@ -25,35 +33,35 @@ POST /booking/rescheduleBooking Reschedule Booking
 public function getBookings($parametersJSON)
 {
 $path="booking/getBookings";
-$url=$host.$path;
-$result = CurlHelper::perform_http_request($httpMethod, $url, $parametersJSON);
+$url=$this->host.$path;
+$result = CurlHelper::perform_http_request($this->httpMethod, $url, $parametersJSON);
 return($result);
 }
 
 
 public function getAvailableBikes($parametersJSON)
 {
-$path="/booking/getAvailableBikes";
-$url=$host.$path;
-$result = CurlHelper::perform_http_request($httpMethod, $url, $parametersJSON);
+$path="booking/getAvailableBikes";
+$url=$this->host.$path;
+$result = CurlHelper::perform_http_request($this->httpMethod, $url, $parametersJSON);
 return($result);
 }
 
 
 public function reserveBike($parametersJSON)
 {
-$path="/booking/reserveBike";
-$url=$host.$path;
-$result = CurlHelper::perform_http_request($httpMethod, $url, $parametersJSON);
+$path="booking/reserveBike";
+$url=$this->host.$path;
+$result = CurlHelper::perform_http_request($this->httpMethod, $url, $parametersJSON);
 return($result);
 }
 
 
 public function bookBike($parametersJSON)
 {
-$path="/booking/bookBike";
-$url=$host.$path;
-$result = CurlHelper::perform_http_request($httpMethod, $url, $parametersJSON);
+$path="booking/bookBike";
+$url=$this->host.$path;
+$result = CurlHelper::perform_http_request($this->httpMethod, $url, $parametersJSON);
 return($result);
 }
 
@@ -61,8 +69,8 @@ return($result);
 public function cancelBooking($parametersJSON)
 {
 $path="booking/cancelBooking";
-$url=$host.$path;
-$result = CurlHelper::perform_http_request($httpMethod, $url, $parametersJSON);
+$url=$this->host.$path;
+$result = CurlHelper::perform_http_request($this->httpMethod, $url, $parametersJSON);
 return($result);
 }
 
@@ -70,8 +78,8 @@ return($result);
 public function checkRescheduleBooking($parametersJSON)
 {
 $path="booking/checkRescheduleBooking";
-$url=$host.$path;
-$result = CurlHelper::perform_http_request($httpMethod, $url, $parametersJSON);
+$url=$this->host.$path;
+$result = CurlHelper::perform_http_request($this->httpMethod, $url, $parametersJSON);
 return($result);
 }
 
@@ -79,8 +87,8 @@ return($result);
 public function reserveRescheduleBooking($parametersJSON)
 {
 $path="booking/reserveRescheduleBooking";
-$url=$host.$path;
-$result = CurlHelper::perform_http_request($httpMethod, $url, $parametersJSON);
+$url=$this->host.$path;
+$result = CurlHelper::perform_http_request($this->httpMethod, $url, $parametersJSON);
 return($result);
 }
 
@@ -88,8 +96,8 @@ return($result);
 public function rescheduleBooking($parametersJSON)
 {
 $path="booking/rescheduleBooking";
-$url=$host.$path;
-$result = CurlHelper::perform_http_request($httpMethod, $url, $parametersJSON);
+$url=$this->host.$path;
+$result = CurlHelper::perform_http_request($this->httpMethod, $url, $parametersJSON);
 return($result);
 }
 
